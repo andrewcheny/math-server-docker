@@ -206,6 +206,15 @@ RUN source activate py3 && conda install -c conda-forge jupyterlab -y
 # Support for other languages
 # https://github.com/jupyter/jupyter/wiki/Jupyter-kernels
 
+# NodeJS Jupyter Kernel: https://github.com/notablemind/jupyter-nodejs
+RUN git clone https://github.com/notablemind/jupyter-nodejs.git \
+	&& cd jupyter-nodejs \
+	#&& mkdir -p ~/.ipython/kernels/nodejs/ \
+	&& npm install && node install.js \
+	&& npm run build \
+	&& npm run build-ext \
+	&& cd .. && rm -rf jupyter-nodejs
+
 # R
 RUN yum -y install \
 	lapack-devel \

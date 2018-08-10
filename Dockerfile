@@ -27,6 +27,7 @@ RUN yum update -y && yum install -y \
 	curl-devel \
 	cronie \
 	czmq \
+	czmq-devel \
 	expat-devel \
 	file \
 	flex \
@@ -297,7 +298,6 @@ RUN cp -r ~/.local/share/jupyter/kernels/julia-$JULIA_VER_MAJ /usr/local/conda/a
 
 # R
 # http://irkernel.github.io/installation/
-RUN yum -y install czmq-devel && yum clean all
 
 RUN R -e "install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))"
 RUN R -e "devtools::install_github('IRkernel/IRkernel')"

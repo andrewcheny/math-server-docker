@@ -217,7 +217,7 @@ RUN git clone https://github.com/notablemind/jupyter-nodejs.git \
 	&& cd .. && rm -rf jupyter-nodejs
 
 # registers global NodeJS kernel
-RUN cp -r ~/.local/share/jupyter/kernels/nodejs /usr/local/conda/anaconda3/share/jupyter/kernels
+RUN cp -r ~/.ipython/kernels/nodejs /usr/local/conda/anaconda3/share/jupyter/kernels
 
 # R
 RUN yum -y install \

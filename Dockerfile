@@ -213,8 +213,7 @@ RUN git clone https://github.com/notablemind/jupyter-nodejs.git \
 	#&& mkdir -p ~/.ipython/kernels/nodejs/ \
 	&& npm install && node install.js \
 	&& npm run build \
-	&& npm run build-ext \
-	&& cd .. && rm -rf jupyter-nodejs
+	&& npm run build-ext
 
 # registers global NodeJS kernel
 RUN cp -r ~/.ipython/kernels/nodejs /usr/local/conda/anaconda3/share/jupyter/kernels
